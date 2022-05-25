@@ -17,4 +17,4 @@ spec: # Dictionary
         - name: owasp-container
           image: owasp/zap2docker-stable
           ports: 
-            - containerPort: 80
+            - containerPort: 8080
