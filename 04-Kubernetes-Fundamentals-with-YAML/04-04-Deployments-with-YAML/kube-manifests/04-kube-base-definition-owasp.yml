@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata: #Dictionary
+  name: owasp-deployment
+spec: # Dictionary
+  replicas: 3
+  selector:
+    matchLabels:
+      app: owasp
+  template:  
+    metadata: # Dictionary
+      name: owasp-pod
+      labels: # Dictionary
+        app: owasp  # Key value paids
+    spec:
+      containers: # List
+        - name: owasp-container
+          image: owasp/zap2docker-stable
+          ports: 
+            - containerPort: 80
